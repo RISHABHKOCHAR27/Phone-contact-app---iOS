@@ -19,6 +19,8 @@
 		C36DCEB52B94FD55002EE51A /* newContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36DCEB42B94FD55002EE51A /* newContactViewController.swift */; };
 		C36DCEB72B9500EA002EE51A /* editViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36DCEB62B9500EA002EE51A /* editViewController.swift */; };
 		C36DCEB92B95A056002EE51A /* apiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36DCEB82B95A056002EE51A /* apiModel.swift */; };
+		C36DCEBC2B979DD3002EE51A /* contactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36DCEBA2B979DD3002EE51A /* contactTableViewCell.swift */; };
+		C36DCEBD2B979DD3002EE51A /* contactTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C36DCEBB2B979DD3002EE51A /* contactTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		C36DCEB42B94FD55002EE51A /* newContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newContactViewController.swift; sourceTree = "<group>"; };
 		C36DCEB62B9500EA002EE51A /* editViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editViewController.swift; sourceTree = "<group>"; };
 		C36DCEB82B95A056002EE51A /* apiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = apiModel.swift; sourceTree = "<group>"; };
+		C36DCEBA2B979DD3002EE51A /* contactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = contactTableViewCell.swift; sourceTree = "<group>"; };
+		C36DCEBB2B979DD3002EE51A /* contactTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = contactTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +119,8 @@
 				C36DCE8D2B94FC77002EE51A /* Assets.xcassets */,
 				C36DCE8F2B94FC77002EE51A /* LaunchScreen.storyboard */,
 				C36DCE922B94FC77002EE51A /* Info.plist */,
+				C36DCEBA2B979DD3002EE51A /* contactTableViewCell.swift */,
+				C36DCEBB2B979DD3002EE51A /* contactTableViewCell.xib */,
 			);
 			path = "Assignment4- phone contact app";
 			sourceTree = "<group>";
@@ -240,6 +246,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C36DCEBD2B979DD3002EE51A /* contactTableViewCell.xib in Resources */,
 				C36DCE912B94FC77002EE51A /* LaunchScreen.storyboard in Resources */,
 				C36DCE8E2B94FC77002EE51A /* Assets.xcassets in Resources */,
 				C36DCE8C2B94FC74002EE51A /* Main.storyboard in Resources */,
@@ -268,6 +275,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C36DCEB92B95A056002EE51A /* apiModel.swift in Sources */,
+				C36DCEBC2B979DD3002EE51A /* contactTableViewCell.swift in Sources */,
 				C36DCE892B94FC74002EE51A /* contactListViewController.swift in Sources */,
 				C36DCE852B94FC74002EE51A /* AppDelegate.swift in Sources */,
 				C36DCEB52B94FD55002EE51A /* newContactViewController.swift in Sources */,

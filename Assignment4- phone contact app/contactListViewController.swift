@@ -16,9 +16,12 @@ class contactListViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        let nib = UINib(nibName: "contactTableViewCell", bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: "contactTableViewCell")
+        
         contactListApi(URL: "https://61db84524593510017aff8d4.mockapi.io/contactbook/v1/getlist") { result in
             self.data = result
-            DispatchQueue.main.async {
+            DispatchQueue.main.async {      //update ui on the main thread
                 self.tableView.reloadData()
             }
         }
@@ -41,6 +44,34 @@ class contactListViewController: UIViewController {
         dataTask.resume()
         
     }
+    
+    //this part can be done in other ways - ask Prasanna
+    
+    func fetchImageFromAPI(for indexPath: IndexPath, completion: @escaping (UIImage?) -> Void) {
+            
+            let imageURLString = data[indexPath.row].avatarUrl
+            
+            // Convert the imageURLString to URL
+            guard let imageURL = URL(string: imageURLString) else {
+                completion(nil)
+                return
+            }
+            
+            // Fetch image data asynchronously
+            URLSession.shared.dataTask(with: imageURL) { data, response, error in
+                guard let imageData = data, error == nil else {
+                    completion(nil)
+                    return
+                }
+                
+                // Convert image data to UIImage
+                if let image = UIImage(data: imageData) {
+                    completion(image)
+                } else {
+                    completion(nil)
+                }
+            }.resume()
+        }
 }
 
 extension contactListViewController: UITableViewDataSource{
@@ -49,10 +80,20 @@ extension contactListViewController: UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell")
-        cell?.textLabel?.text = data[indexPath.row].firstName 
+        let cell = tableView.dequeueReusableCell(withIdentifier: "contactTableViewCell") as! contactTableViewCell
+        cell.firstName.text = data[indexPath.row].firstName
+        cell.lastName.text = data[indexPath.row].lastName
+       // cell.contactImage.image = UIImage(data[indexPath.row].avatarUrl)
+        fetchImageFromAPI(for: indexPath) { image in
+                    // Update UI on the main thread
+                    DispatchQueue.main.async {
+                        cell.contactImage.image = image
+                    }
+                }
+        
+        
         		    
-        return cell!
+        return cell
     }
 }
 
