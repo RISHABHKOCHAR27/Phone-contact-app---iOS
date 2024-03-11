@@ -7,12 +7,12 @@
 
 import Foundation
 
-struct Contacts: Decodable {
-    let firstName: String
-    let lastName: String
-    let avatarUrl: String
-    let isFavourite: Bool
-    let mobileNumber: String
-    let email: String
-    let id: String
+struct Contacts: Codable {
+    var firstName: String
+    var lastName: String
+    var avatarUrl: String
+    var isFavourite: Bool
+    var mobileNumber: String
+    var email: String
+    var id: String
 }

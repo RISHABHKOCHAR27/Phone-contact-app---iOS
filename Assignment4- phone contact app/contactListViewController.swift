@@ -10,6 +10,10 @@ import UIKit
 class contactListViewController: UIViewController {
 
     var data = [Contacts]()
+
+    var sectionTitle = [String]()
+    
+    var sectionDict = [String: [Contacts]]()
     
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
@@ -25,6 +29,21 @@ class contactListViewController: UIViewController {
                 self.tableView.reloadData()
             }
         }
+        
+        sectionTitle = Array(Set(data.compactMap({String($0.firstName.prefix(1))})))  //take the first character of names
+        sectionTitle.sort()
+        sectionTitle.forEach({sectionDict[$0] = [Contacts]()}) // make blank array for every section title
+       // data.forEach({sectionDict[String($0.firstName.prefix(1))]?.append($0)})
+        data.forEach { contact in
+                let firstLetter = String(contact.firstName.prefix(1))
+                if var contactsArray = sectionDict[firstLetter] {
+                    contactsArray.append(contact)
+                    sectionDict[firstLetter] = contactsArray
+                } else {
+                    sectionDict[firstLetter] = [contact]
+                }
+            }
+        
     }
 
     func contactListApi(URL url: String, completion: @escaping ([Contacts]) -> Void){  // @escaping has 2 purposes: storing a closure and async operating purposes.
@@ -74,15 +93,25 @@ class contactListViewController: UIViewController {
         }
 }
 
-extension contactListViewController: UITableViewDataSource{
+extension contactListViewController: UITableViewDataSource, UITableViewDelegate{
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        sectionTitle.count
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.count
+        // return data.count
+        
+        //DOUBT
+        sectionDict[sectionTitle[section]]!.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "contactTableViewCell") as! contactTableViewCell
-        cell.firstName.text = data[indexPath.row].firstName
+        //cell.firstName.text = data[indexPath.row].firstName
+        cell.firstName.text = sectionDict[sectionTitle[indexPath.section]]?[indexPath.row].firstName
         cell.lastName.text = data[indexPath.row].lastName
+        cell.lastName.text = sectionDict[sectionTitle[indexPath.section]]?[indexPath.row].lastName
        // cell.contactImage.image = UIImage(data[indexPath.row].avatarUrl)
         fetchImageFromAPI(for: indexPath) { image in
                     // Update UI on the main thread
@@ -91,9 +120,11 @@ extension contactListViewController: UITableViewDataSource{
                     }
                 }
         
-        
-        		    
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        sectionTitle[section]
     }
 }
 
