@@ -60,13 +60,15 @@
                             <constraint firstItem="kU9-ln-qTt" firstAttribute="leading" secondItem="O9d-rC-cuF" secondAttribute="trailing" constant="58.333333333333343" id="hAE-yO-AOc"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="xYL-ti-sWQ"/>
                     <connections>
+                        <outlet property="newContactButton" destination="kU9-ln-qTt" id="czg-YC-Azv"/>
                         <outlet property="tableView" destination="efy-Ot-bCZ" id="dGh-5i-uiN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="944.27480916030527" y="-2.1126760563380285"/>
+            <point key="canvasLocation" x="1870.9923664122136" y="-2.1126760563380285"/>
         </scene>
         <!--New Contact View Controller-->
         <scene sceneID="MY8-rf-qCN">
@@ -81,7 +83,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ejP-WA-cv1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1787" y="-420"/>
+            <point key="canvasLocation" x="2712.2137404580153" y="-420.42253521126764"/>
         </scene>
         <!--Edit View Controller-->
         <scene sceneID="3ip-kd-dw6">
@@ -96,7 +98,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jyr-WW-Zri" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1785" y="521"/>
+            <point key="canvasLocation" x="2710.6870229007632" y="520.42253521126759"/>
         </scene>
     </scenes>
     <resources>
