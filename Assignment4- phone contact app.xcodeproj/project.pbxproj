@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6486EA2D66F2DD9F69E461CB /* Pods_Assignment4__phone_contact_app_Assignment4__phone_contact_appUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48B2217B00E645C2E45A6818 /* Pods_Assignment4__phone_contact_app_Assignment4__phone_contact_appUITests.framework */; };
+		77DA9D367024928FD77C38B3 /* Pods_Assignment4__phone_contact_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C58DDFA67461110606AB601 /* Pods_Assignment4__phone_contact_app.framework */; };
+		ADEA36E80C640C55CB7049E8 /* Pods_Assignment4__phone_contact_appTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B1FCFD68FA992EA98DF93B8 /* Pods_Assignment4__phone_contact_appTests.framework */; };
 		C36DCE852B94FC74002EE51A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36DCE842B94FC74002EE51A /* AppDelegate.swift */; };
 		C36DCE872B94FC74002EE51A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36DCE862B94FC74002EE51A /* SceneDelegate.swift */; };
 		C36DCE892B94FC74002EE51A /* contactListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36DCE882B94FC74002EE51A /* contactListViewController.swift */; };
@@ -21,6 +24,8 @@
 		C36DCEB92B95A056002EE51A /* apiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36DCEB82B95A056002EE51A /* apiModel.swift */; };
 		C36DCEBC2B979DD3002EE51A /* contactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36DCEBA2B979DD3002EE51A /* contactTableViewCell.swift */; };
 		C36DCEBD2B979DD3002EE51A /* contactTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C36DCEBB2B979DD3002EE51A /* contactTableViewCell.xib */; };
+		C3EC08AD2BA0DCB40080DBD3 /* Assignment4- phone contact app.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C3EC08AB2BA0DCB40080DBD3 /* Assignment4- phone contact app.xcdatamodeld */; };
+		C3FF277E2BB75A8D003AE413 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = C3FF277D2BB75A8D003AE413 /* Podfile */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +46,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0F9635D14148CE0C9F7D9C30 /* Pods-Assignment4- phone contact appTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Assignment4- phone contact appTests.release.xcconfig"; path = "Target Support Files/Pods-Assignment4- phone contact appTests/Pods-Assignment4- phone contact appTests.release.xcconfig"; sourceTree = "<group>"; };
+		48B2217B00E645C2E45A6818 /* Pods_Assignment4__phone_contact_app_Assignment4__phone_contact_appUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Assignment4__phone_contact_app_Assignment4__phone_contact_appUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B1FCFD68FA992EA98DF93B8 /* Pods_Assignment4__phone_contact_appTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Assignment4__phone_contact_appTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4DD36681823862E3363786E4 /* Pods-Assignment4- phone contact app-Assignment4- phone contact appUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Assignment4- phone contact app-Assignment4- phone contact appUITests.release.xcconfig"; path = "Target Support Files/Pods-Assignment4- phone contact app-Assignment4- phone contact appUITests/Pods-Assignment4- phone contact app-Assignment4- phone contact appUITests.release.xcconfig"; sourceTree = "<group>"; };
+		5525F6D28F77E89DD9396BE0 /* Pods-Assignment4- phone contact app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Assignment4- phone contact app.debug.xcconfig"; path = "Target Support Files/Pods-Assignment4- phone contact app/Pods-Assignment4- phone contact app.debug.xcconfig"; sourceTree = "<group>"; };
+		6C58DDFA67461110606AB601 /* Pods_Assignment4__phone_contact_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Assignment4__phone_contact_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E8F00DA9B4B28B8D5E284FB /* Pods-Assignment4- phone contact app-Assignment4- phone contact appUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Assignment4- phone contact app-Assignment4- phone contact appUITests.debug.xcconfig"; path = "Target Support Files/Pods-Assignment4- phone contact app-Assignment4- phone contact appUITests/Pods-Assignment4- phone contact app-Assignment4- phone contact appUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		79BFE2C4B1018970764DCDF9 /* Pods-Assignment4- phone contact app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Assignment4- phone contact app.release.xcconfig"; path = "Target Support Files/Pods-Assignment4- phone contact app/Pods-Assignment4- phone contact app.release.xcconfig"; sourceTree = "<group>"; };
 		C36DCE812B94FC74002EE51A /* Assignment4- phone contact app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Assignment4- phone contact app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C36DCE842B94FC74002EE51A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C36DCE862B94FC74002EE51A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +72,9 @@
 		C36DCEB82B95A056002EE51A /* apiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = apiModel.swift; sourceTree = "<group>"; };
 		C36DCEBA2B979DD3002EE51A /* contactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = contactTableViewCell.swift; sourceTree = "<group>"; };
 		C36DCEBB2B979DD3002EE51A /* contactTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = contactTableViewCell.xib; sourceTree = "<group>"; };
+		C3EC08AC2BA0DCB40080DBD3 /* Assignment4- phone contact app.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Assignment4- phone contact app.xcdatamodel"; sourceTree = "<group>"; };
+		C3FF277D2BB75A8D003AE413 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		DBA35E12444B312766933B3B /* Pods-Assignment4- phone contact appTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Assignment4- phone contact appTests.debug.xcconfig"; path = "Target Support Files/Pods-Assignment4- phone contact appTests/Pods-Assignment4- phone contact appTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77DA9D367024928FD77C38B3 /* Pods_Assignment4__phone_contact_app.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADEA36E80C640C55CB7049E8 /* Pods_Assignment4__phone_contact_appTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,19 +98,47 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6486EA2D66F2DD9F69E461CB /* Pods_Assignment4__phone_contact_app_Assignment4__phone_contact_appUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		75334D21035F90CAA954198F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6C58DDFA67461110606AB601 /* Pods_Assignment4__phone_contact_app.framework */,
+				48B2217B00E645C2E45A6818 /* Pods_Assignment4__phone_contact_app_Assignment4__phone_contact_appUITests.framework */,
+				4B1FCFD68FA992EA98DF93B8 /* Pods_Assignment4__phone_contact_appTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AFA260AAE9821411092395C3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5525F6D28F77E89DD9396BE0 /* Pods-Assignment4- phone contact app.debug.xcconfig */,
+				79BFE2C4B1018970764DCDF9 /* Pods-Assignment4- phone contact app.release.xcconfig */,
+				6E8F00DA9B4B28B8D5E284FB /* Pods-Assignment4- phone contact app-Assignment4- phone contact appUITests.debug.xcconfig */,
+				4DD36681823862E3363786E4 /* Pods-Assignment4- phone contact app-Assignment4- phone contact appUITests.release.xcconfig */,
+				DBA35E12444B312766933B3B /* Pods-Assignment4- phone contact appTests.debug.xcconfig */,
+				0F9635D14148CE0C9F7D9C30 /* Pods-Assignment4- phone contact appTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		C36DCE782B94FC74002EE51A = {
 			isa = PBXGroup;
 			children = (
+				C3FF277D2BB75A8D003AE413 /* Podfile */,
 				C36DCE832B94FC74002EE51A /* Assignment4- phone contact app */,
 				C36DCE9A2B94FC78002EE51A /* Assignment4- phone contact appTests */,
 				C36DCEA42B94FC78002EE51A /* Assignment4- phone contact appUITests */,
 				C36DCE822B94FC74002EE51A /* Products */,
+				AFA260AAE9821411092395C3 /* Pods */,
+				75334D21035F90CAA954198F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -121,6 +167,7 @@
 				C36DCE922B94FC77002EE51A /* Info.plist */,
 				C36DCEBA2B979DD3002EE51A /* contactTableViewCell.swift */,
 				C36DCEBB2B979DD3002EE51A /* contactTableViewCell.xib */,
+				C3EC08AB2BA0DCB40080DBD3 /* Assignment4- phone contact app.xcdatamodeld */,
 			);
 			path = "Assignment4- phone contact app";
 			sourceTree = "<group>";
@@ -149,9 +196,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C36DCEAB2B94FC78002EE51A /* Build configuration list for PBXNativeTarget "Assignment4- phone contact app" */;
 			buildPhases = (
+				667CD1C69F12B6EA1F776032 /* [CP] Check Pods Manifest.lock */,
 				C36DCE7D2B94FC74002EE51A /* Sources */,
 				C36DCE7E2B94FC74002EE51A /* Frameworks */,
 				C36DCE7F2B94FC74002EE51A /* Resources */,
+				104FC3718EA8A08B19AC8DDD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -166,6 +215,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C36DCEAE2B94FC78002EE51A /* Build configuration list for PBXNativeTarget "Assignment4- phone contact appTests" */;
 			buildPhases = (
+				9D6873744D67F4A3FD571FB0 /* [CP] Check Pods Manifest.lock */,
 				C36DCE932B94FC78002EE51A /* Sources */,
 				C36DCE942B94FC78002EE51A /* Frameworks */,
 				C36DCE952B94FC78002EE51A /* Resources */,
@@ -184,9 +234,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C36DCEB12B94FC78002EE51A /* Build configuration list for PBXNativeTarget "Assignment4- phone contact appUITests" */;
 			buildPhases = (
+				2A2B291137F1DE00C667A131 /* [CP] Check Pods Manifest.lock */,
 				C36DCE9D2B94FC78002EE51A /* Sources */,
 				C36DCE9E2B94FC78002EE51A /* Frameworks */,
 				C36DCE9F2B94FC78002EE51A /* Resources */,
+				BD172AF8DFD1B7665499F161 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -246,6 +298,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3FF277E2BB75A8D003AE413 /* Podfile in Resources */,
 				C36DCEBD2B979DD3002EE51A /* contactTableViewCell.xib in Resources */,
 				C36DCE912B94FC77002EE51A /* LaunchScreen.storyboard in Resources */,
 				C36DCE8E2B94FC77002EE51A /* Assets.xcassets in Resources */,
@@ -269,6 +322,109 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		104FC3718EA8A08B19AC8DDD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Assignment4- phone contact app/Pods-Assignment4- phone contact app-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Assignment4- phone contact app/Pods-Assignment4- phone contact app-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Assignment4- phone contact app/Pods-Assignment4- phone contact app-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2A2B291137F1DE00C667A131 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Assignment4- phone contact app-Assignment4- phone contact appUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		667CD1C69F12B6EA1F776032 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Assignment4- phone contact app-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9D6873744D67F4A3FD571FB0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Assignment4- phone contact appTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BD172AF8DFD1B7665499F161 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Assignment4- phone contact app-Assignment4- phone contact appUITests/Pods-Assignment4- phone contact app-Assignment4- phone contact appUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Assignment4- phone contact app-Assignment4- phone contact appUITests/Pods-Assignment4- phone contact app-Assignment4- phone contact appUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Assignment4- phone contact app-Assignment4- phone contact appUITests/Pods-Assignment4- phone contact app-Assignment4- phone contact appUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C36DCE7D2B94FC74002EE51A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -278,6 +434,7 @@
 				C36DCEBC2B979DD3002EE51A /* contactTableViewCell.swift in Sources */,
 				C36DCE892B94FC74002EE51A /* contactListViewController.swift in Sources */,
 				C36DCE852B94FC74002EE51A /* AppDelegate.swift in Sources */,
+				C3EC08AD2BA0DCB40080DBD3 /* Assignment4- phone contact app.xcdatamodeld in Sources */,
 				C36DCEB52B94FD55002EE51A /* newContactViewController.swift in Sources */,
 				C36DCEB72B9500EA002EE51A /* editViewController.swift in Sources */,
 				C36DCE872B94FC74002EE51A /* SceneDelegate.swift in Sources */,
@@ -452,6 +609,7 @@
 		};
 		C36DCEAC2B94FC78002EE51A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5525F6D28F77E89DD9396BE0 /* Pods-Assignment4- phone contact app.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -479,6 +637,7 @@
 		};
 		C36DCEAD2B94FC78002EE51A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 79BFE2C4B1018970764DCDF9 /* Pods-Assignment4- phone contact app.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -506,6 +665,7 @@
 		};
 		C36DCEAF2B94FC78002EE51A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DBA35E12444B312766933B3B /* Pods-Assignment4- phone contact appTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -525,6 +685,7 @@
 		};
 		C36DCEB02B94FC78002EE51A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0F9635D14148CE0C9F7D9C30 /* Pods-Assignment4- phone contact appTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -544,6 +705,7 @@
 		};
 		C36DCEB22B94FC78002EE51A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6E8F00DA9B4B28B8D5E284FB /* Pods-Assignment4- phone contact app-Assignment4- phone contact appUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -561,6 +723,7 @@
 		};
 		C36DCEB32B94FC78002EE51A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4DD36681823862E3363786E4 /* Pods-Assignment4- phone contact app-Assignment4- phone contact appUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -616,6 +779,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C3EC08AB2BA0DCB40080DBD3 /* Assignment4- phone contact app.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C3EC08AC2BA0DCB40080DBD3 /* Assignment4- phone contact app.xcdatamodel */,
+			);
+			currentVersion = C3EC08AC2BA0DCB40080DBD3 /* Assignment4- phone contact app.xcdatamodel */;
+			path = "Assignment4- phone contact app.xcdatamodeld";
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = C36DCE792B94FC74002EE51A /* Project object */;
 }

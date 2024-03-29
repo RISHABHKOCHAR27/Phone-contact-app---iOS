@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import CoreData
+import MBProgressHUD
 
 class contactListViewController: UIViewController {
 
@@ -17,6 +19,7 @@ class contactListViewController: UIViewController {
     
     @IBOutlet weak var newContactButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -24,26 +27,100 @@ class contactListViewController: UIViewController {
         let nib = UINib(nibName: "contactTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "contactTableViewCell")
         self.tableView.rowHeight = 93.0
+        tableView.sectionIndexColor = UIColor.systemGreen
 
+        fetchContactsFromLocalDB()
         
-        contactListApi(URL: "https://61db84524593510017aff8d4.mockapi.io/contactbook/v1/getlist") { result in
-            self.data = result
-            self.populateSections()
-            DispatchQueue.main.async {      //update ui on the main thread
-                self.tableView.reloadData()
-            }
+        
+        
+    }
+    
+    func fetchContactsFromLocalDB(){
+        if contactsAvailableLocally(){
+            displayContacts()
+        }else{
+            fetchContactsFromServer()
+        }
+    }
+    
+    func contactsAvailableLocally() -> Bool {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else{
+            return false //initialize core data stack
+        }
+        let managedContext = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Contacts") //fetch request
+        do{
+            let contacts = try managedContext.fetch(fetchRequest)
+            
+            return !contacts.isEmpty
+        }catch let error as NSError{
+            print("Error fetching contacts: \(error.localizedDescription)")
+            return false
         }
         
     }
+    
+    func displayContacts(){
+        populateSections()
+        tableView.reloadData()
+    }
+    
+    func fetchContactsFromServer(){
+        DispatchQueue.main.async {
+            MBProgressHUD.showAdded(to: self.view, animated: true)
+        }
+        contactListApi(URL: "https://61db84524593510017aff8d4.mockapi.io/contactbook/v1/getlist") { result in
+            self.data = result
+            
+        DispatchQueue.main.async {
+            MBProgressHUD.hide(for: self.view, animated: true)
+            self.displayContacts()
+                //update ui on the main thread
+                self.tableView.reloadData()
+            }
+            
+            //need to save to data to local db
+            self.saveContactsToDB()
+               }
+    }
+    
+    func saveContactsToDB(){
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            return
+        }
         
+        let context = appDelegate.persistentContainer.viewContext
+        
+        for contactData in self.data {
+            if let contactEntity = NSEntityDescription.entity(forEntityName: "Contact", in: context) {
+                let contact = NSManagedObject(entity: contactEntity, insertInto: context)
+                contact.setValue(contactData.firstName, forKey: "firstName")
+                contact.setValue(contactData.lastName, forKey: "lastName")
+                contact.setValue(contactData.mobileNumber, forKey: "mobileNumber")
+                contact.setValue(contactData.email, forKey: "email")
+                
+                // Save the context
+                do {
+                    try context.save()
+                } catch {
+                    print("Error saving contact to local DB: \(error.localizedDescription)")
+                }
+            }
+        }
+    }
+        
+
+    
         func populateSections() {
             sectionTitle = Array(Set(data.map { String($0.firstName.prefix(1)) }))
             sectionTitle.sort()
             sectionDict = Dictionary(grouping: data) { String($0.firstName.prefix(1)) }
         }
         
-
+    // MARK - call contact api
     func contactListApi(URL url: String, completion: @escaping ([Contacts]) -> Void){  // @escaping has 2 purposes: storing a closure and async operating purposes.
+        
+   //     MBProgressHUD.showAdded(to: self.view, animated: true)
         
         let url = URL(string: url)
         let session = URLSession.shared
@@ -86,6 +163,8 @@ class contactListViewController: UIViewController {
                 }
             }.resume()
         }
+    
+    
 }
 
 extension contactListViewController: UITableViewDataSource, UITableViewDelegate{
@@ -117,9 +196,10 @@ extension contactListViewController: UITableViewDataSource, UITableViewDelegate{
                             }
                         }
                     }
-                    
+       
                 }
-
+        
+        
 //        // cell.firstName.text = sectionDict[sectionTitle[indexPath.section]]?[indexPath.row].firstName
 //        //cell.lastName.text = data[indexPath.row].lastName
 //       // cell.lastName.text = sectionDict[sectionTitle[indexPath.section]]?[indexPath.row].lastName
@@ -141,6 +221,14 @@ extension contactListViewController: UITableViewDataSource, UITableViewDelegate{
     
     func sectionIndexTitles(for tableView: UITableView) -> [String]? {
         sectionTitle
+    }
+    
+    //section title color
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        if let headerView = view as? UITableViewHeaderFooterView {
+            headerView.contentView.backgroundColor = .lightGray
+            headerView.textLabel?.textColor = .white
+        }
     }
 }
 

@@ -18,17 +18,6 @@
                 <rect key="frame" x="0.0" y="0.0" width="347" height="93"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button opaque="NO" alpha="0.90000000000000002" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T9k-yR-ZOs">
-                        <rect key="frame" x="279.33333333333331" y="24" width="41.666666666666686" height="44"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <state key="normal" title="Button"/>
-                        <buttonConfiguration key="configuration" style="filled">
-                            <imageReference key="image" image="star" catalog="system" symbolScale="small"/>
-                            <color key="baseForegroundColor" systemColor="systemGreenColor"/>
-                            <color key="baseBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </buttonConfiguration>
-                    </button>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AE3-Kq-NB4">
                         <rect key="frame" x="11" y="18" width="58" height="57"/>
                     </imageView>
@@ -38,6 +27,17 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" alpha="0.90000000000000002" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T9k-yR-ZOs">
+                        <rect key="frame" x="295" y="24" width="41.666666666666686" height="44"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="filled">
+                            <imageReference key="image" image="star" catalog="system" symbolScale="small"/>
+                            <color key="baseForegroundColor" systemColor="systemGreenColor"/>
+                            <color key="baseBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </buttonConfiguration>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="T9k-yR-ZOs" secondAttribute="bottom" constant="25" id="8dI-FM-Mjh"/>
@@ -48,7 +48,7 @@
                     <constraint firstAttribute="trailing" secondItem="1d5-NL-S6w" secondAttribute="trailing" constant="84" id="baP-rA-2C3"/>
                     <constraint firstItem="AE3-Kq-NB4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="18" id="d2h-OT-1HZ"/>
                     <constraint firstAttribute="bottom" secondItem="1d5-NL-S6w" secondAttribute="bottom" constant="36" id="fgV-qb-hto"/>
-                    <constraint firstAttribute="trailing" secondItem="T9k-yR-ZOs" secondAttribute="trailing" constant="26" id="ppg-Rk-7wd"/>
+                    <constraint firstAttribute="trailing" secondItem="T9k-yR-ZOs" secondAttribute="trailing" constant="10.333333333333314" id="ppg-Rk-7wd"/>
                     <constraint firstItem="1d5-NL-S6w" firstAttribute="leading" secondItem="AE3-Kq-NB4" secondAttribute="trailing" constant="8" id="x8L-b7-Ixg"/>
                     <constraint firstItem="T9k-yR-ZOs" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="24" id="zdH-Yt-gBR"/>
                 </constraints>
@@ -57,7 +57,7 @@
             <connections>
                 <outlet property="contactImage" destination="AE3-Kq-NB4" id="XLC-GU-8Hj"/>
                 <outlet property="firstName" destination="1d5-NL-S6w" id="8Ta-Wa-0tY"/>
-                <outlet property="isFavorite" destination="T9k-yR-ZOs" id="0f7-Jk-8WJ"/>
+                <outlet property="likeTapped" destination="T9k-yR-ZOs" id="kAd-aY-wc2"/>
             </connections>
             <point key="canvasLocation" x="2.2900763358778624" y="36.971830985915496"/>
         </tableViewCell>

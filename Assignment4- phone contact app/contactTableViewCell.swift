@@ -15,7 +15,9 @@ class contactTableViewCell: UITableViewCell {
        
     @IBOutlet weak var lastName: UILabel!
     
-    @IBOutlet weak var isFavorite: UIButton!
+    @IBOutlet weak var likeTapped: UIButton!
+    
+    var likeButtonTapped: (() -> Void)?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,6 +28,10 @@ class contactTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    @IBAction func likeButtonTapped(_ sender: UIButton){
+        likeButtonTapped?()
     }
     
 }
