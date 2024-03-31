@@ -30,9 +30,7 @@ class contactListViewController: UIViewController {
         tableView.sectionIndexColor = UIColor.systemGreen
 
         fetchContactsFromLocalDB()
-        
-        
-        
+     
     }
     
     func fetchContactsFromLocalDB(){
@@ -85,25 +83,27 @@ class contactListViewController: UIViewController {
     }
     
     func saveContactsToDB(){
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-            return
-        }
-        
-        let context = appDelegate.persistentContainer.viewContext
-        
-        for contactData in self.data {
-            if let contactEntity = NSEntityDescription.entity(forEntityName: "Contact", in: context) {
-                let contact = NSManagedObject(entity: contactEntity, insertInto: context)
-                contact.setValue(contactData.firstName, forKey: "firstName")
-                contact.setValue(contactData.lastName, forKey: "lastName")
-                contact.setValue(contactData.mobileNumber, forKey: "mobileNumber")
-                contact.setValue(contactData.email, forKey: "email")
-                
-                // Save the context
-                do {
-                    try context.save()
-                } catch {
-                    print("Error saving contact to local DB: \(error.localizedDescription)")
+        DispatchQueue.main.async {
+            guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+                return
+            }
+            
+            let context = appDelegate.persistentContainer.viewContext
+            
+            for contactData in self.data {
+                if let contactEntity = NSEntityDescription.entity(forEntityName: "Contact", in: context) {
+                    let contact = NSManagedObject(entity: contactEntity, insertInto: context)
+                    contact.setValue(contactData.firstName, forKey: "firstName")
+                    contact.setValue(contactData.lastName, forKey: "lastName")
+                    contact.setValue(contactData.mobileNumber, forKey: "mobileNumber")
+                    contact.setValue(contactData.email, forKey: "email")
+                    
+                    // Save the context
+                    do {
+                        try context.save()
+                    } catch {
+                        print("Error saving contact to local DB: \(error.localizedDescription)")
+                    }
                 }
             }
         }
@@ -114,7 +114,7 @@ class contactListViewController: UIViewController {
         func populateSections() {
             sectionTitle = Array(Set(data.map { String($0.firstName.prefix(1)) }))
             sectionTitle.sort()
-            sectionDict = Dictionary(grouping: data) { String($0.firstName.prefix(1)) }
+            sectionDict = Dictionary(grouping: data) { String($0.firstName.prefix(1)) }//data source
         }
         
     // MARK - call contact api
@@ -196,7 +196,7 @@ extension contactListViewController: UITableViewDataSource, UITableViewDelegate{
                             }
                         }
                     }
-       
+            
                 }
         
         
@@ -230,6 +230,25 @@ extension contactListViewController: UITableViewDataSource, UITableViewDelegate{
             headerView.textLabel?.textColor = .white
         }
     }
+    
+        //linking cell to next screen
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let cell = tableView.cellForRow(at: indexPath) as? contactTableViewCell,
+           let vc = storyboard?.instantiateViewController(withIdentifier: "editViewController") as? editViewController{
+            vc.img = cell.contactImage.image!
+            vc.name = cell.firstName.text!
+            
+            if let contacts = sectionDict[sectionTitle[indexPath.section]]?[indexPath.row]{
+                vc.email = contacts.email
+                vc.phnum = contacts.mobileNumber
+                vc.data = self.data     //display the changes in og data file
+                vc.contactIndex = indexPath.row
+            }
+
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+    
 }
 
 

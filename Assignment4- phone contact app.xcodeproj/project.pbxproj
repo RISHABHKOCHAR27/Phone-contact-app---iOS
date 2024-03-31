@@ -125,7 +125,6 @@
 				DBA35E12444B312766933B3B /* Pods-Assignment4- phone contact appTests.debug.xcconfig */,
 				0F9635D14148CE0C9F7D9C30 /* Pods-Assignment4- phone contact appTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -155,18 +154,14 @@
 		C36DCE832B94FC74002EE51A /* Assignment4- phone contact app */ = {
 			isa = PBXGroup;
 			children = (
-				C36DCE842B94FC74002EE51A /* AppDelegate.swift */,
-				C36DCE862B94FC74002EE51A /* SceneDelegate.swift */,
-				C36DCE882B94FC74002EE51A /* contactListViewController.swift */,
-				C36DCEB42B94FD55002EE51A /* newContactViewController.swift */,
-				C36DCEB62B9500EA002EE51A /* editViewController.swift */,
+				C38CEEFB2BB9EA5E0022BE0F /* Delegates */,
+				C38CEEFA2BB9E9FF0022BE0F /* viewControllers */,
 				C36DCEB82B95A056002EE51A /* apiModel.swift */,
+				C38CEEFC2BB9EA7E0022BE0F /* customCell */,
 				C36DCE8A2B94FC74002EE51A /* Main.storyboard */,
 				C36DCE8D2B94FC77002EE51A /* Assets.xcassets */,
 				C36DCE8F2B94FC77002EE51A /* LaunchScreen.storyboard */,
 				C36DCE922B94FC77002EE51A /* Info.plist */,
-				C36DCEBA2B979DD3002EE51A /* contactTableViewCell.swift */,
-				C36DCEBB2B979DD3002EE51A /* contactTableViewCell.xib */,
 				C3EC08AB2BA0DCB40080DBD3 /* Assignment4- phone contact app.xcdatamodeld */,
 			);
 			path = "Assignment4- phone contact app";
@@ -187,6 +182,34 @@
 				C36DCEA72B94FC78002EE51A /* Assignment4__phone_contact_appUITestsLaunchTests.swift */,
 			);
 			path = "Assignment4- phone contact appUITests";
+			sourceTree = "<group>";
+		};
+		C38CEEFA2BB9E9FF0022BE0F /* viewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				C36DCE882B94FC74002EE51A /* contactListViewController.swift */,
+				C36DCEB42B94FD55002EE51A /* newContactViewController.swift */,
+				C36DCEB62B9500EA002EE51A /* editViewController.swift */,
+			);
+			path = viewControllers;
+			sourceTree = "<group>";
+		};
+		C38CEEFB2BB9EA5E0022BE0F /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				C36DCE842B94FC74002EE51A /* AppDelegate.swift */,
+				C36DCE862B94FC74002EE51A /* SceneDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		C38CEEFC2BB9EA7E0022BE0F /* customCell */ = {
+			isa = PBXGroup;
+			children = (
+				C36DCEBA2B979DD3002EE51A /* contactTableViewCell.swift */,
+				C36DCEBB2B979DD3002EE51A /* contactTableViewCell.xib */,
+			);
+			path = customCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
