@@ -7,7 +7,13 @@
 
 import UIKit
 
+protocol editViewControllerDelegate: AnyObject{
+    func didUpdateContact(_ contact: Contacts, atIndex index: Int)
+}
+
 class editViewController: UIViewController {
+    
+    weak var delegate: editViewControllerDelegate?
 
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var fullName: UITextField!
@@ -36,7 +42,17 @@ class editViewController: UIViewController {
             data[contactIndex].firstName = fullName.text ?? ""
             data[contactIndex].mobileNumber = phoneNumber.text ?? ""
             data[contactIndex].email = emailID.text ?? ""
+            
+            //notify the delegate about the updated contact
+            delegate?.didUpdateContact(data[contactIndex], atIndex: contactIndex)
         }
         navigationController?.popViewController(animated: true)
+        
     }
+    
+//    private func saveButton(){
+//        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: <#T##UIBarButtonItem.SystemItem#>, target: <#T##Any?#>, action: <#T##Selector?#>)
+//    }
 }
+
+

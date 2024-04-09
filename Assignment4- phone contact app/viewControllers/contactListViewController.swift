@@ -21,6 +21,7 @@ class contactListViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
@@ -167,6 +168,18 @@ class contactListViewController: UIViewController {
     
 }
 
+
+
+extension contactListViewController: editViewControllerDelegate{
+    func didUpdateContact(_ contact: Contacts, atIndex index: Int) {
+        //update the data array
+        data[index] = contact
+        tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
+    }
+    
+    
+}
+
 extension contactListViewController: UITableViewDataSource, UITableViewDelegate{
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -243,12 +256,23 @@ extension contactListViewController: UITableViewDataSource, UITableViewDelegate{
                 vc.phnum = contacts.mobileNumber
                 vc.data = self.data     //display the changes in og data file
                 vc.contactIndex = indexPath.row
+                
             }
+            vc.delegate = self //set self as a delegate
 
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
-    
+
+}
+
+extension contactListViewController {
+    func addNewContact(_ contact: Contacts) {
+        // Add the new contact to your data source coming from newContactViewController
+        data.append(contact)
+        populateSections()
+        tableView.reloadData()
+    }
 }
 
 
